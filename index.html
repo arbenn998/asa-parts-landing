@@ -7,6 +7,10 @@
       name="description"
       content="ASA Parts - Quality used and new car parts. Engines, headlights, mirrors, doors, bonnets, and more."
     />
+    <meta name="theme-color" content="#111111" />
+    <meta name="color-scheme" content="dark" />
+    <link rel="canonical" href="https://asa-parts-landing.netlify.app/" />
+
     <meta property="og:title" content="ASA Parts | Engines & Car Parts" />
     <meta
       property="og:description"
@@ -16,14 +20,27 @@
     <meta property="og:url" content="https://asa-parts-landing.netlify.app/" />
     <meta
       property="og:image"
-      content="https://asa-parts-landing.netlify.app/images/photo-1.jpg"
+      content="https://asa-parts-landing.netlify.app/images/og-image.jpg"
     />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+
     <title>ASA Parts | Engines & Car Parts</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@500;700&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      href="fonts/oswald-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="fonts/inter-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
     />
 
     <link rel="stylesheet" href="style.css" />
@@ -31,6 +48,8 @@
   </head>
 
   <body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
     <header class="header">
       <div class="container header__inner">
         <a href="#home" class="logo">ASA<span>Parts</span></a>
@@ -40,6 +59,12 @@
             <li><a href="#engines" class="nav__link">Engines</a></li>
             <li><a href="#parts" class="nav__link">Parts</a></li>
             <li><a href="#why-us" class="nav__link">Why Us</a></li>
+            <li class="nav__item--wide">
+              <a href="#how-it-works" class="nav__link">How It Works</a>
+            </li>
+            <li class="nav__item--wide">
+              <a href="#faq" class="nav__link">FAQ</a>
+            </li>
             <li><a href="#contact" class="nav__link">Contact</a></li>
           </ul>
         </nav>
@@ -50,11 +75,11 @@
       </div>
     </header>
 
-    <main>
+    <main id="main">
       <section class="hero" id="home">
         <div class="container hero__inner">
           <div class="hero__content">
-            <p class="hero__tagline">Engines &amp; Car Parts Specialists</p>
+            <p class="section-tag">Engines &amp; Car Parts Specialists</p>
 
             <h1 class="hero__title">
               The Right Part.<br />
@@ -78,39 +103,48 @@
               <li>Fast Delivery</li>
             </ul>
           </div>
+
+          <div class="hero__media">
+            <img
+              src="images/engine-946.webp"
+              srcset="
+                images/engine-480.webp 480w,
+                images/engine-946.webp 946w
+              "
+              sizes="(min-width: 1024px) 30rem, 100vw"
+              alt="Used car engine ready for sale at ASA Parts"
+              width="946"
+              height="1200"
+              fetchpriority="high"
+            />
+            <p class="hero__badge">
+              <strong>Tested before sale</strong>
+              Warranty on every engine
+            </p>
+          </div>
         </div>
       </section>
 
       <section class="engines" id="engines">
         <div class="container engines__inner">
-          <div class="engines__media">
-            <img
-              src="images/photo-1.jpg"
-              alt="Used car engine ready for sale at ASA Parts"
-              width="700"
-              height="500"
-              loading="lazy"
-            />
-          </div>
-
           <div class="engines__content">
             <p class="section-tag">Our Specialty</p>
             <h2 class="section-title">Engines You Can Trust</h2>
-            <p>
+            <p class="engines__text">
               Engines are the heart of our business. Every engine we sell is
               checked and tested before it leaves our warehouse, so you know
               exactly what you're getting.
             </p>
 
-            <ul class="engines__list">
-              <li>Petrol &amp; diesel engines</li>
-              <li>Tested before sale</li>
-              <li>Warranty on every engine</li>
-              <li>Help with choosing the right fit</li>
-            </ul>
-
             <a href="#contact" class="btn btn--primary">Ask About an Engine</a>
           </div>
+
+          <ul class="engines__list">
+            <li>Petrol &amp; diesel engines</li>
+            <li>Tested before sale</li>
+            <li>Warranty on every engine</li>
+            <li>Help with choosing the right fit</li>
+          </ul>
         </div>
       </section>
 
@@ -128,80 +162,100 @@
           <div class="parts__grid">
             <article class="part-card">
               <img
-                src="images/car-headlights.jpg"
+                src="images/car-headlights.webp"
                 alt="Car headlights"
-                width="600"
+                width="400"
                 height="400"
                 loading="lazy"
               />
               <div class="part-card__body">
                 <h3 class="part-card__title">Headlights</h3>
                 <p>Halogen, xenon and LED headlights and tail lights.</p>
+                <a href="#contact" class="part-card__link">
+                  Request <span class="visually-hidden">headlights</span>
+                  <span aria-hidden="true">&rarr;</span>
+                </a>
               </div>
             </article>
 
             <article class="part-card">
               <img
-                src="images/car-mirror.jpg"
+                src="images/car-mirror.webp"
                 alt="Car side mirrors"
-                width="600"
-                height="400"
+                width="640"
+                height="480"
                 loading="lazy"
               />
               <div class="part-card__body">
                 <h3 class="part-card__title">Mirrors</h3>
                 <p>Manual and electric side mirrors, complete or glass only.</p>
+                <a href="#contact" class="part-card__link">
+                  Request <span class="visually-hidden">mirrors</span>
+                  <span aria-hidden="true">&rarr;</span>
+                </a>
               </div>
             </article>
 
             <article class="part-card">
               <img
-                src="images/car-door.jpg"
+                src="images/car-door.webp"
                 alt="Car doors"
-                width="600"
-                height="400"
+                width="231"
+                height="172"
                 loading="lazy"
               />
               <div class="part-card__body">
                 <h3 class="part-card__title">Doors</h3>
                 <p>Front and rear doors in many colors and models.</p>
+                <a href="#contact" class="part-card__link">
+                  Request <span class="visually-hidden">doors</span>
+                  <span aria-hidden="true">&rarr;</span>
+                </a>
               </div>
             </article>
 
             <article class="part-card">
               <img
-                src="images/car-bonnet.jpg"
+                src="images/car-bonnet.webp"
                 alt="Car bonnets"
-                width="600"
-                height="400"
+                width="554"
+                height="554"
                 loading="lazy"
               />
               <div class="part-card__body">
                 <h3 class="part-card__title">Bonnets</h3>
                 <p>Bonnets in good condition, ready to fit or repaint.</p>
+                <a href="#contact" class="part-card__link">
+                  Request <span class="visually-hidden">bonnets</span>
+                  <span aria-hidden="true">&rarr;</span>
+                </a>
               </div>
             </article>
 
             <article class="part-card">
               <img
-                src="images/car-tailgate.jpg"
+                src="images/car-tailgate.webp"
                 alt="Car tailgates"
-                width="600"
-                height="400"
+                width="800"
+                height="600"
                 loading="lazy"
               />
               <div class="part-card__body">
                 <h3 class="part-card__title">Tailgates</h3>
                 <p>Tailgates and boot lids for hatchbacks, estates and SUVs.</p>
+                <a href="#contact" class="part-card__link">
+                  Request <span class="visually-hidden">tailgates</span>
+                  <span aria-hidden="true">&rarr;</span>
+                </a>
               </div>
             </article>
 
             <article class="part-card">
               <img
-                src="images/car-frontend.jpg"
+                src="images/car-frontend.webp"
                 alt="Complete car front-end assembly"
-                width="600"
-                height="400"
+                width="640"
+                height="480"
                 loading="lazy"
               />
               <div class="part-card__body">
@@ -209,6 +263,10 @@
                 <p>
                   Complete front-ends with bumper, grille, lights and radiator.
                 </p>
+                <a href="#contact" class="part-card__link">
+                  Request <span class="visually-hidden">front-ends</span>
+                  <span aria-hidden="true">&rarr;</span>
+                </a>
               </div>
             </article>
           </div>
@@ -229,6 +287,19 @@
 
           <div class="why-us__list">
             <article class="feature">
+              <svg
+                class="feature__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.75"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M12 3l7 3v5c0 4.5-3 8.2-7 10-4-1.8-7-5.5-7-10V6z" />
+                <path d="M9 12l2 2 4-4" />
+              </svg>
               <h3 class="feature__title">Quality Checked</h3>
               <p>
                 Every part is inspected before sale. No surprise when it
@@ -237,6 +308,19 @@
             </article>
 
             <article class="feature">
+              <svg
+                class="feature__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.75"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M3 12V4h8l10 10-8 8z" />
+                <circle cx="7.5" cy="8.5" r="1.25" />
+              </svg>
               <h3 class="feature__title">Fair Prices</h3>
               <p>
                 Used parts at a fraction of the cost of new, without cutting
@@ -245,6 +329,21 @@
             </article>
 
             <article class="feature">
+              <svg
+                class="feature__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.75"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M2 6h11v10H2z" />
+                <path d="M13 9h4l4 4v3h-8z" />
+                <circle cx="6.5" cy="17.5" r="2" />
+                <circle cx="17.5" cy="17.5" r="2" />
+              </svg>
               <h3 class="feature__title">Fast Delivery</h3>
               <p>
                 Quick shipping, or pick up your parts directly from our
@@ -253,6 +352,19 @@
             </article>
 
             <article class="feature">
+              <svg
+                class="feature__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.75"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M4 5h16v11H9l-5 4z" />
+                <path d="M8 9h8M8 12h5" />
+              </svg>
               <h3 class="feature__title">Expert Advice</h3>
               <p>
                 Not sure what fits your car? We'll help you find the right part.
@@ -291,14 +403,74 @@
         </div>
       </section>
 
+      <section class="faq" id="faq">
+        <div class="container">
+          <div class="section-header">
+            <p class="section-tag">Good to Know</p>
+            <h2 class="section-title">Common Questions</h2>
+          </div>
+
+          <div class="faq__list">
+            <details class="faq__item" name="faq">
+              <summary class="faq__question">Are your engines tested?</summary>
+              <p class="faq__answer">
+                Yes. Every engine is checked and tested before it leaves our
+                warehouse, so you know exactly what you're getting.
+              </p>
+            </details>
+
+            <details class="faq__item" name="faq">
+              <summary class="faq__question">
+                Do engines come with a warranty?
+              </summary>
+              <p class="faq__answer">
+                Yes, every engine we sell comes with a warranty.
+                <a href="#contact">Ask us</a> for the terms on the engine you're
+                interested in.
+              </p>
+            </details>
+
+            <details class="faq__item" name="faq">
+              <summary class="faq__question">
+                How do I know the part fits my car?
+              </summary>
+              <p class="faq__answer">
+                Send us the make, model and year of your car. We'll check and
+                help you choose the right part before you buy.
+              </p>
+            </details>
+
+            <details class="faq__item" name="faq">
+              <summary class="faq__question">
+                Do you deliver, or do I have to collect?
+              </summary>
+              <p class="faq__answer">
+                Either. We can ship the part straight to your door, or you can
+                pick it up directly from our warehouse.
+              </p>
+            </details>
+
+            <details class="faq__item" name="faq">
+              <summary class="faq__question">
+                What if the part I need isn't listed?
+              </summary>
+              <p class="faq__answer">
+                Ask anyway. The parts on this page are only the most common
+                ones, and we probably have what you're looking for.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
       <section class="contact" id="contact">
         <div class="container">
           <div class="section-header">
             <p class="section-tag">Get In Touch</p>
             <h2 class="section-title">Request a Part</h2>
             <p class="section-text">
-              Tell us what you need and we'll get to you with availability and a
-              price.
+              Tell us what you need and we'll get back to you with availability
+              and a price.
             </p>
           </div>
 
@@ -326,6 +498,7 @@
               class="contact__form"
               name="contact"
               method="POST"
+              action="/thanks.html"
               data-netlify="true"
               data-netlify-honeypot="bot-field"
             >
@@ -333,8 +506,16 @@
                 <label>Don't fill this out: <input name="bot-field" /></label>
               </p>
 
+              <p class="form__note">
+                Fields marked <span class="form__required">*</span> are
+                required.
+              </p>
+
               <div class="form__group">
-                <label for="name">Full Name</label>
+                <label for="name">
+                  Full Name
+                  <span class="form__required" aria-hidden="true">*</span>
+                </label>
                 <input
                   type="text"
                   id="name"
@@ -345,7 +526,10 @@
               </div>
 
               <div class="form__group">
-                <label for="phone">Phone</label>
+                <label for="phone">
+                  Phone
+                  <span class="form__required" aria-hidden="true">*</span>
+                </label>
                 <input
                   type="tel"
                   id="phone"
@@ -356,7 +540,9 @@
               </div>
 
               <div class="form__group">
-                <label for="email">Email <span>(optional)</span></label>
+                <label for="email">
+                  Email <span class="form__optional">(optional)</span>
+                </label>
                 <input
                   type="email"
                   id="email"
@@ -366,7 +552,10 @@
               </div>
 
               <div class="form__group">
-                <label for="car">Car (make, model, year)</label>
+                <label for="car">
+                  Car (make, model, year)
+                  <span class="form__required" aria-hidden="true">*</span>
+                </label>
                 <input
                   type="text"
                   id="car"
@@ -377,7 +566,10 @@
               </div>
 
               <div class="form__group form__group--full">
-                <label for="part">Part Needed</label>
+                <label for="part">
+                  Part Needed
+                  <span class="form__required" aria-hidden="true">*</span>
+                </label>
                 <select id="part" name="part" required>
                   <option value="">Choose a part</option>
                   <option value="engine">Engine</option>
@@ -392,8 +584,15 @@
               </div>
 
               <div class="form__group form__group--full">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="5"></textarea>
+                <label for="message">
+                  Message <span class="form__optional">(optional)</span>
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  placeholder="e.g. engine code, part number, colour"
+                ></textarea>
               </div>
 
               <button type="submit" class="btn btn--primary form__submit">
@@ -418,6 +617,7 @@
             <li><a href="#parts">Parts</a></li>
             <li><a href="#why-us">Why Us</a></li>
             <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#faq">FAQ</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
